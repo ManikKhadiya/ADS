@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/manik/Documents/GitHub/40652166.SET08122-09117-2024-5-TR2-001---Algorithms-and-Data-Structures/src/labOne",
-      "program": "c:/Users/manik/Documents/GitHub/40652166.SET08122-09117-2024-5-TR2-001---Algorithms-and-Data-Structures/src/labOne/build/Debug/outDebug",
+      "cwd": "c:/Users/manik/Documents/GitHub/40652166.SET08122-09117-2024-5-TR2-001---Algorithms-and-Data-Structures/src",
+      "program": "c:/Users/manik/Documents/GitHub/40652166.SET08122-09117-2024-5-TR2-001---Algorithms-and-Data-Structures/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
