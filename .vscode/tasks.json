@@ -2,32 +2,66 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Setup MSVC Environment",
-            "type": "shell",
-            "command": "cmd.exe",
-            "args": [
-                "/c",
-                "\"C:\\\"\"Program Files\"\"\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\" && echo MSVC Environment Set"
-            ]
-        },
-        {
-            "label": "Compile Active C File",
+            "label": "Clean and Build Active C File",
             "type": "shell",
             "command": "cl",
             "args": [
                 "/nologo",
-                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "/Fo${workspaceFolder}/build/${fileBasenameNoExtension}/",
+                "/Fe${workspaceFolder}/build/${fileBasenameNoExtension}/${fileBasenameNoExtension}.exe",
                 "${file}"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
-            "problemMatcher": ["$msCompile"],
+            "problemMatcher": [
+                "$msCompile"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn": ["Setup MSVC Environment"]
+            "dependsOn": [
+                "Clean Build Directory"
+            ]
+        },
+        {
+            "label": "Clean Build Directory",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "if exist ${workspaceFolder}\\build\\${fileBasenameNoExtension} (rd /s /q ${workspaceFolder}\\build\\${fileBasenameNoExtension}) && mkdir ${workspaceFolder}\\build\\${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "Make build directory",
+            "type": "shell",
+            "command": "cmd.exe",
+            "args": [
+                "/c",
+                "mkdir ${workspaceFolder}\\build\\${fileBasenameNoExtension}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Active Executable",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/${fileBasenameNoExtension}/${fileBasenameNoExtension}.exe",
+            "dependsOn": [
+                "Clean and Build Active C File"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
         }
     ]
 }

@@ -11,7 +11,7 @@
       "cwd": "c:/Users/manik/Documents/GitHub/ADS/src",
       "program": "c:/Users/manik/Documents/GitHub/ADS/src/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/Debugger/gdb.exe",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

@@ -56,6 +56,9 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "java.jdt.ls.java.home": "C:\\Users\\manik\\.jdks\\jdk-24",
+  "code-runner.executorMap": {
+    "c": "mkdir -p ${fileDirname}/build/${fileBasenameNoExtension} && cl /nologo /Fo\"${fileDirname}/build/${fileBasenameNoExtension}/\" /Fe\"${fileDirname}/build/${fileBasenameNoExtension}/${fileBasenameNoExtension}.exe\" \"${file}\" && \"${fileDirname}/build/${fileBasenameNoExtension}/${fileBasenameNoExtension}.exe\""
+  }
 }
-
