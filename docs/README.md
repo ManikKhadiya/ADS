@@ -1,1 +1,0 @@
-# Documentation (setup guides, project reports, etc.)
